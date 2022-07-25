@@ -1,0 +1,23 @@
+.barra {
+  background-image: linear-gradient(
+    45deg,
+    #01b8a5,
+    #0087a0,
+    #0174a4,
+    #3260bc,
+    #7c3bac,
+    #930199
+  );
+  border: solid 1px black;
+  box-sizing: border-box rgba(0, 0, 0, 0.45);
+}
+
+.link {
+  margin-left: 5px;
+}
+.link1 {
+  margin-left: 1100px;
+}
+.link2 {
+  margin-left: 10px;
+}

@@ -1,0 +1,149 @@
+<div class="container">
+  <mat-card class="card" style="height: 100px">
+    <mat-card-header>
+      <mat-card-title>Cadastro /<b>Cadastro De Pessoa</b></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="send">
+        <button class="sendButton" mat-raised-button color="primary">
+          <mat-icon
+            _ngcontent-rex-c82=""
+            role="img"
+            class="mat-icon notranslate material-icons mat-icon-no-color"
+            aria-hidden="true"
+            >apps</mat-icon
+          >
+          Todos os Clientes
+        </button>
+        <!-- MODAL -->
+        <button
+          mat-raised-button
+          class="sendButton"
+          color="primary"
+          (click)="modal.toggle()"
+        >
+          Pj ou Pf
+        </button>
+        <app-modal #modal>
+          <h1>
+            Olá! Vamos criar um novo cadatros? Você é uma Pessoa física ou
+            Júridica?
+          </h1>
+          <button
+            mat-raised-button
+            class="modalButton"
+            (click)="modal.toggle()"
+          >
+            close
+          </button>
+        </app-modal>
+        <!-- FIM DO MODAL -->
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="card" style="min-height: 800px">
+    <mat-card-header>
+      <mat-card-title>Cadastro de cliente</mat-card-title>
+      <mat-card-subtitle
+        >Formulário de cadastro Pessoa jurídica
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content style="padding-left: 20px">
+      <form [formGroup]="clienteFormPj">
+        <mat-form-field class="Name">
+          <input
+            matInput
+            (change)="ngAfterViewInit()"
+            placeholder="Nome Completo"
+            formControlName="name"
+            required
+          />
+        </mat-form-field>
+
+        <mat-form-field class="Phone">
+          <input
+            matInput
+            (change)="ngAfterViewInit()"
+            placeholder="Número de Telefone"
+            type="number"
+            formControlName="phone"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="Address">
+          <input
+            matInput
+            (change)="ngAfterViewInit()"
+            placeholder="Endereço"
+            typi="string"
+            formControlName="adress"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="CEP">
+          <input
+            matInput
+            (change)="ngAfterViewInit()"
+            placeholder="CEP"
+            type="number"
+            formControlName="cep"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="UF">
+          <input
+            matInput
+            (change)="ngAfterViewInit()"
+            placeholder="UF"
+            formControlName="uf"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="IE">
+          <input
+            matInput
+            (change)="ngAfterViewInit()"
+            placeholder="IE"
+            type="number"
+            formControlName="ie"
+            required
+          />
+        </mat-form-field>
+
+        <mat-form-field class="CNPJ">
+          <input
+            matInput
+            (change)="ngAfterViewInit()"
+            placeholder="CNPJ"
+            type="number"
+            formControlName="cnpj"
+            required
+          />
+        </mat-form-field>
+
+        <!--Botão para enviar formulario-->
+        <div class="send">
+          <button
+            class="sendButton"
+            mat-raised-button
+            color="primary"
+            (click)="onSubmit()"
+            [disabled]="!formValid"
+          >
+            Cadastrar
+          </button>
+          <button
+            class="sendButton"
+            mat-raised-button
+            color="primary"
+            (click)="onCancel()"
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
